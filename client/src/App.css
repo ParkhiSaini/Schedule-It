@@ -50,10 +50,8 @@
   
   
   position: relative;
-  width: 1536px;
-  height: 712px;
+  height: 100vh;
   background: linear-gradient(180deg, #89E3FF 0%, #000000 100%);
- 
 
 
 }
