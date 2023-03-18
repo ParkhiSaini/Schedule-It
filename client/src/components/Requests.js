@@ -23,7 +23,16 @@ function Requests(){
                         <div class="dropdown-options">
                             <a href="#">Approved</a>
                             <a href="#">Rejected</a>
-                            <a href="#">Pending</a>
+                          
+                        </div>
+                </div>
+
+                <div class="dropdown-cards">
+                    <button>Request made on </button>
+                        <div class="dropdown-options">
+                            <a href="#">Approved</a>
+                            <a href="#">Rejected</a>
+                          
                         </div>
                 </div>
         </div>
