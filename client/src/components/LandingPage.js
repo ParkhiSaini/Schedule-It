@@ -6,6 +6,11 @@ import '../App.css';
 
 import { useNavigate } from 'react-router-dom';
 function LandingPage(){
+    const navigate = useNavigate();
+
+  const handleBookNowClick = () => {
+    navigate('/Requests');
+  }
     return(
 
     <div class = "LandingPage">
@@ -27,7 +32,8 @@ function LandingPage(){
        
         
         {/*button  type="button " class ="SignIn">Sign In</button>*/}
-        <button type="button" class="btn">Book Now</button>
+        {/* <button type="button" class="btn">Book Now</button> */}
+        <button type="button" class="btn" onClick={handleBookNowClick}>Book Now</button>
         
         
 
