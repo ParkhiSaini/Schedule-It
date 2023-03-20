@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
+import BookRoom from './BookRoom';
 
 function LoginPage(){
+    const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/BookRoom');
+  }
     return(
         <div class ="LoginPage">
             <nav class="navbar navbar-light bg-light">
@@ -17,7 +23,8 @@ function LoginPage(){
             <p class="text2">Log-In</p>
             <p class = "schedule_it2">SCHEDULE IT</p>
             <p class= "text2_line">An easy to way to book a meeting room</p>
-            <button type="button" class="sign_in2">Sign In</button> 
+            <button type="button" class="sign_in2" onClick={handleLoginClick}>Sign In</button> 
+            
             <a class="forgot" href="#" >
             Forgot Password ? 
             </a>

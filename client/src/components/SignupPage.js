@@ -5,20 +5,28 @@ import "../App.css";
 import { useNavigate } from "react-router-dom";
 
 function SignupPage() {
+
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    navigate('/Login');
+  }
   return (
     <div class="SignupPage">
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/LandingPage">
           Home
         </a>
       </nav>
-      <div class="card">
-        <p class="text3">Sign-Up</p>
-        <p class="schedule_it2">SCHEDULE IT</p>
-        <p class="text2_line">An easy to way to book a meeting room</p>
-        <button type="button" class="sign_in2">
+      <p class="heading">SignUp</p>
+      <div class="card2">
+        
+        <p class="schedule_it3">SCHEDULE IT</p>
+        <p class="text3_line">An easy to way to book a meeting room</p>
+        <button type="button" class="sign_in2" onClick={handleSignUpClick}>
           Create Account
         </button>
+        
       </div>
 
       <form class="form2">
@@ -47,11 +55,10 @@ function SignupPage() {
           
             <select class="form-control2_1" id="FormControlSelect1">
               <option value="">ROLE</option>
-              <option id="option">1</option>
-              <option id="option">2</option>
-              <option id="option">3</option>
-              <option id="option">4</option>
-              <option id="option">5</option>
+              <option id="option">Dean/Admin</option>
+              <option id="option">Heads/Captains</option>
+              <option id="option">Student</option>
+            
             </select>
           </div>
         </div>

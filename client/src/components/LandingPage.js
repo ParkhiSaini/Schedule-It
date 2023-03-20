@@ -2,14 +2,16 @@ import React  from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
-
-
+import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
 import { useNavigate } from 'react-router-dom';
+
+
 function LandingPage(){
     const navigate = useNavigate();
 
   const handleBookNowClick = () => {
-    navigate('/Requests');
+    navigate('/BookRoom');
   }
     return(
 
@@ -17,8 +19,8 @@ function LandingPage(){
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Home</a>
-                <a class="LogIn" href ="#">Login</a>
-                <a class="SignIn" href ="#">SignIn</a>
+                <a class="LogIn" href ="/Login">Login</a>
+                <a class="SignIn" href ="/Signup">SignUp</a>
             </div>
         </nav>
         <p class="Scheduleit">SCHEDULE IT</p> 
@@ -31,8 +33,7 @@ function LandingPage(){
         </div>
        
         
-        {/*button  type="button " class ="SignIn">Sign In</button>*/}
-        {/* <button type="button" class="btn">Book Now</button> */}
+       
         <button type="button" class="btn" onClick={handleBookNowClick}>Book Now</button>
         
         

@@ -6,22 +6,22 @@ import "../App.css";
 import { useNavigate } from "react-router-dom";
 
 function BookRoom() {
+
+  const navigate = useNavigate();
+
+  const handleRaisingClick = () => {
+    navigate('/Requests');
+  }
   return (
     <div class="BookRoom">
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          Home
-        </a>
-        <a class="navbar-brand3" href="#">
-          Username
-        </a>
-        <a class="navbar-brand4" href="#">
-          Time-Table
-        </a>
-        <a class="navbar-brand5" href="#">
-          Your Requests
-        </a>
-      </nav>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/LandingPage">Home</a>
+            <a class="Request" href ="/Requests">Requests</a>
+            <a class="Time-table" href ="#">Time-Table</a>
+            <a class="User" href ="#">User</a>
+          </div>
+        </nav>
       <p class="text3">Book Your Room</p>
       <form class="form3">
         <div class="form_col1">
@@ -87,7 +87,7 @@ function BookRoom() {
           </div>
         </div>
       </form>
-      <button class ="Book">Raise Ticket</button> 
+      <button class ="Book" onClick={handleRaisingClick}>Raise Ticket</button> 
     </div>
   );
 }
