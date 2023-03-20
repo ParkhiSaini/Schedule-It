@@ -171,13 +171,154 @@
   color:white;
 }
 
+.Requests{
+  position: relative;
+  width: auto;
+  height:100vh;
+  background: linear-gradient(180deg, #89E3FF 0%, #000000 100%);
+  overflow:hidden; 
+  overflow-y:hidden;
+}
 
-@media only screen and (min-width: 992px) {
-  body{
-    background-color: green;
-  }
+.Request{
+  position: absolute;
+  text-decoration: none;
+  color: #000000;
+  width: 72px;
+  height: 30px;
+  right: 14em;
+  top: 12px;
+  text-decoration: none;
+  font-family: 'Gugi';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
 
 }
+
+.Time-table
+{
+  position: absolute;
+  text-decoration: none;
+  color: #000000;
+  width: 127px;
+  height: 30px;
+  right: 5em;
+  top: 12px;
+  text-decoration: none;
+  font-family: 'Gugi';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.User{
+  position: absolute;
+  text-decoration: none;
+  color: #000000;
+  width: 72px;
+  height: 30px;
+  right: 1em;
+  top: 12px;
+  text-decoration: none;
+  font-family: 'Gugi';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+
+}
+
+.requests-page {
+  left:32px;
+  padding: 20px;
+}
+
+h2{
+  position: relative;
+  width: 226px;
+  height: 89px;
+  left: 32px;
+  top: 50px;
+  font-family: 'Mohave';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 89px;
+  color: #000000;
+
+}
+
+
+.filter-container{
+  position:absolute;
+  left:1035px;
+  top:120px;
+}
+
+.filter-button {
+  padding: 10px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  
+}
+
+.filter-button.active {
+  background-color: #000000;
+  color: #fff;
+}
+
+.request-list {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.request-item {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width:167vh;
+  left:32px;
+  top:10px;
+  border: 1.5px solid #ffffff;
+  padding: 20px;
+  position: relative;
+}
+
+.request-more-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.request-details {
+  display: none;
+  padding-top: 20px;
+}
+
+.request-details.show {
+  display: block;
+}
+
+.dropdown-options a:hover {
+  color: #0a0a23;
+  background-color: #ddd;
+  border-radius:3px;
+}
+
+
 
 .LoginPage{
   
@@ -592,9 +733,7 @@ color: #D9D9D9;
       font-size: 2rem;
     }
     
-.form-control3{
 
-}
 .form-control3_3{
   position: absolute;
   width:60%;
