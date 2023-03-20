@@ -1,74 +1,94 @@
-import React  from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import '../App.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import "../App.css";
 
+import { useNavigate } from "react-router-dom";
 
-import { useNavigate } from 'react-router-dom';
-
-function BookRoom(){
-    return(<div class = "BookRoom">
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#" >
-                Home 
-            </a>
-            <a class="navbar-brand3" href="#" >
-                Username
-            </a>
-            <a class="navbar-brand4" href="#" >
-                Time-Table
-            </a>
-            <a class="navbar-brand5" href="#" >
-                Your Requests
-            </a>
-        </nav>
-        <p class="text3">Book Your Room</p>
-        <form class= "form3">
+function BookRoom() {
+  return (
+    <div class="BookRoom">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          Home
+        </a>
+        <a class="navbar-brand3" href="#">
+          Username
+        </a>
+        <a class="navbar-brand4" href="#">
+          Time-Table
+        </a>
+        <a class="navbar-brand5" href="#">
+          Your Requests
+        </a>
+      </nav>
+      <p class="text3">Book Your Room</p>
+      <form class="form3">
         <div class="form_col1">
-        <div  class="inputBox3" >
-                    <input type="name" class="form-control3"  placeholder ="NAME"></input>
+          <div class="inputBox3">
+            <input type="name" class="form-control3" placeholder="Name:"></input>
+          </div>
+          
+          <div class="inputBox3">
+            <input
+              type="name"
+              class="form-control3"
+              placeholder="No. of People:"
+            ></input>
+          </div>
+          <div class="inputBox3">
+            <select class="form-control3_1" id="FormControlSelect2">
+              <option value="">Clubs/Chapter</option>
+              <option id="option">CSI</option>
+              <option id="option">ACM </option>
+              <option id="option">GDSC</option>
+              <option id="option">IEEE</option>
+              <option id="option">BURS</option>
+            </select>
+           </div>
 
-                </div>
-                {/* <div class="inputBox3">
-                    <input type="name" name="name" value="" ></input>
-                    <label>Purpose</label>
-                </div> */}
-    <div class="inputBox3">
-        <input type="name" name="name" value=""></input>
-        <label>No.Of People</label>
-    </div>
-    <div class="inputBox3">
-        <input type="name" name="name" value="" ></input>
-        
-            <label>Club/Chapter</label>
-            
-      <div class="inputBox3">
-                    <input type="name" name="name" value="" ></input>
-                    <label>Room Type</label>
-                </div>                  
-    </div>
-    </div>
-    <div class="form_col2">
-                <div class="inputBox3">
-                    <input type="name" name="name" value="" ></input>
-                    <label>Date-</label>
-                </div>
-    <div class="inputBox3">
-        <input type="name" name="name" value="" ></input>
-        <label>Priority</label>
-    </div>
-    <div class="inputBox3">
-        <input type="name" name="name" value="" ></input>
-            <label>Duration-</label>
-                        
-    </div>
-    </div>
-    
-    </form> 
-    <button class ="Book">Raise Ticket</button>
+           <div class="inputBox3">
+              <select class="form-control3_2" id="FormControlSelect3">
+                <option value="">Room type</option>
+                <option id="option">Group discussion room</option>
+                <option id="option">labs</option>
+                <option id="option">Confrence Room </option>
+                <option id="option">Lecture Room </option>
+                <option id="option">Meeting Rooms</option>
+              </select>
+             
+            </div>
+          
+          <div class="form_col2">
+            <div class="inputBox3">
+            <input
+              type="name"
+              class="form-control3"
+              placeholder="Date:"
+            ></input>
+            </div>
+            <div class="inputBox3">
+            <input
+              type="name"
+              class="form-control3"
+              placeholder="Priority:"
+            ></input>
+            </div>
+            <div class="inputBox3">
+            <select class="form-control3_3" id="FormControlSelect3">
+                <option value="">Duration</option>
+                <option id="option">1-2hr</option>
+                <option id="option">3-4hrs</option>
+                <option id="option">5-6hrs </option>
+                <option id="option">7-8hrs </option>
+                <option id="option">more than 8 hrs</option>
+              </select>
+            </div>
+          </div>
         </div>
-
-            );
-        
-        }
+      </form>
+      <button class ="Book">Raise Ticket</button> 
+    </div>
+  );
+}
 export default BookRoom;
