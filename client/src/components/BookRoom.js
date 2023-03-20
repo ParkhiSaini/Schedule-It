@@ -24,35 +24,41 @@ function BookRoom(){
         </nav>
         <p class="text3">Book Your Room</p>
         <form class= "form3">
-            <div class="form_col1">
-                <div class="inputBox3">
-                    <input type="name" name="name" value="" />
-                    <label>Purpose</label>
+        <div class="form_col1">
+        <div  class="inputBox3" >
+                    <input type="name" class="form-control3"  placeholder ="NAME"></input>
+
                 </div>
+                {/* <div class="inputBox3">
+                    <input type="name" name="name" value="" ></input>
+                    <label>Purpose</label>
+                </div> */}
     <div class="inputBox3">
-        <input type="name" name="name" value="" />
+        <input type="name" name="name" value=""></input>
         <label>No.Of People</label>
     </div>
     <div class="inputBox3">
-        <input type="name" name="name" value="" />
+        <input type="name" name="name" value="" ></input>
+        
             <label>Club/Chapter</label>
+            
       <div class="inputBox3">
-                    <input type="name" name="name" value="" />
+                    <input type="name" name="name" value="" ></input>
                     <label>Room Type</label>
                 </div>                  
     </div>
     </div>
     <div class="form_col2">
                 <div class="inputBox3">
-                    <input type="name" name="name" value="" />
+                    <input type="name" name="name" value="" ></input>
                     <label>Date-</label>
                 </div>
     <div class="inputBox3">
-        <input type="name" name="name" value="" />
+        <input type="name" name="name" value="" ></input>
         <label>Priority</label>
     </div>
     <div class="inputBox3">
-        <input type="name" name="name" value="" />
+        <input type="name" name="name" value="" ></input>
             <label>Duration-</label>
                         
     </div>
@@ -62,7 +68,7 @@ function BookRoom(){
     <button class ="Book">Raise Ticket</button>
         </div>
 
-        );
-      
-    }
+            );
+        
+        }
 export default BookRoom;

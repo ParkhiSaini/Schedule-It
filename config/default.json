@@ -1,4 +1,4 @@
 {
   "mongoURI":
-  "mongodb+srv://Parkhi:parkhi%40123@scheduleit.17o9bgq.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://Parkhi:parkhi%40123@scheduleit.17o9bgq.mongodb.net/ScheduleIt"
 }

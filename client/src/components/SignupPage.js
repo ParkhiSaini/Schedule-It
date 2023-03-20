@@ -22,24 +22,57 @@ function SignupPage(){
           
         
             </div>
+
+
+
+
             <form class= "form2">
-                <div class="inputBox2">
-                    <input type="name" name="name" value="" />
-                    <label>Name</label>
+                <div  class="inputBox2" >
+                    <input type="name" class="form-control2"  placeholder ="NAME"></input>
+
                 </div>
     <div class="inputBox2">
-      <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);" value=""/>
-      <label>Email</label>
+      <input type="email"  class="form-control2" id="exampleFormControlInput1" placeholder="EMAIL"></input>
+
     </div>
     <div class="inputBox2">
-      <input type="password" name="password" required value=""
-             onkeyup="this.setAttribute('value', this.value);"
-             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
-      <label>Password</label>
+    <input type="password" class="form-control2" id="exampleInputPassword1" placeholder="PASSWORD"></input>
+    
+{/*     
+    <div class="half dropdown">
+      <div class="underline right-control">
+      <input type="Role" class="form-control2" placeholder='ROLE' />
+    
+       
+        <div class="dropdown-arrow"><div></div></div>
+      </div>
+      <select>
+          <option value="Africa">Africa</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Australia">Australia</option>
+            <option value="Antarctica">Antarctica</option>
+         </select>
+    </div> */}
+
+
+
+
+
+
       <div class="inputBox2">
-                    <input type="name" name="name" value="" />
-                    <label>Role</label>
+                    {/* <input type="Role" class="form-control2" placeholder='ROLE' /> */}
+                    <select class="form-control2" id="FormControlSelect1" >
+                        <option value="" >ROLE</option>
+                        <option id ="option">1</option>
+                        <option id ="option" >2</option>
+                        <option id ="option">3</option>
+                        <option id ="option">4</option>
+                        <option id="option">5</option>
+                    </select>
+                    
                 </div>                  
     </div>
     

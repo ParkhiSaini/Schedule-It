@@ -26,15 +26,12 @@ function LoginPage(){
             </div>
             <form class= "form">
     <div class="inputBox">
-      <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);" value=""/>
-      <label>Email</label>
+      <input type="email"  class="form-control" id="exampleFormControlInput1" placeholder="EMAIL"></input>
     </div>
     <div class="inputBox">
-      <input type="password" name="password" required value=""
-             onkeyup="this.setAttribute('value', this.value);"
-             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
-      <label>Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="PASSWORD"></input>
+    
+      
     </div>
     
     </form>
