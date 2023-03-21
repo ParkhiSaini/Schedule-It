@@ -25,7 +25,6 @@ function LoginPage(){
 		if (data.user) {
 			localStorage.setItem('token', data.user)
 			alert('Login successful')
-            console.log("hehehe")
 			window.location.href = '/BookRoom'
 		} else {
 			alert('Please check your username and password')
