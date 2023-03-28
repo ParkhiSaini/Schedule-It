@@ -6,7 +6,8 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
 const connectDB = require('./config/db');
-const routes = require('./routes/api/rooms');
+const Roomroutes = require('./routes/api/rooms');
+const Reqroutes = require('./routes/api/requests');
 
 const app = express();
 connectDB();
@@ -14,7 +15,9 @@ connectDB();
 app.use(cors())
 app.use(express.json())
 
-app.use('/api', routes);
+app.use('/api', Roomroutes);
+
+app.use('/api/requests', Reqroutes);
 
 app.post('/api/SignUp', async (req, res) => {
 	console.log(req.body)
