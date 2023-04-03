@@ -22,16 +22,32 @@ app.use('/api/requests', Reqroutes);
 app.post('/api/SignUp', async (req, res) => {
 	console.log(req.body)
 	try {
+
+		console.log("Validation check started");
+		if (!req.body.email.endsWith('@bennett.edu.in')) {
+			 res.json({ status: 'ValidID', error: 'Invalid email address' });
+			console.log("Invalid Email Address kindly use your bennett id");
+		}
+
+
+		else{
+
+		
 		const newPassword = await bcrypt.hash(req.body.password, 10)
+		
+
 		await User.create({
 			name: req.body.name,
 			email: req.body.email,
 			password: newPassword,
 		})
-		res.json({ status: 'ok' })
+		
+		res.json({ status: 'ok123' })
+	}
 	} catch (err) {
 		res.json({ status: 'error', error: 'Duplicate email' })
 	}
+
 })
 
 app.post('/api/Login', async (req, res) => {
