@@ -28,6 +28,14 @@ const ReqSchema = mongoose.Schema({
     duration: {
         type: String,
         required: true
+    },
+    reason: {
+        type: String,
+        required: true
+    },
+    stat: {
+        type: String,
+        required: true
     }
 },{
     collection: 'requests'

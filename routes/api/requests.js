@@ -1,14 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-const ReqSchema = require('../../models/Requests');
+const Req = require('../../models/Requests');
 
 router.get('/test', (req, res) => res.send('Testing heheheheh!'));
 
+router.get("/display-requests", (req, res) => {
+  Req.find()
+    .then(requests => res.status(200).json(requests))
+    .catch(err => res.status(404).json({ noreqsfound: 'No Requests found' }));
+  });
+
+
 router.post('/create-request', async(req, res) => {
-  const reques = new ReqSchema(req.body);
-  const saved = await reques.save()
-  .then(game => {
+  const reques = new Req(req.body);
+  await reques.save()
+  .then(requests => {
   res.status(200).json("request successfully saved");
   })
   .catch(err => {
@@ -16,9 +23,4 @@ router.post('/create-request', async(req, res) => {
   });
 });
 
-router.get("/display-requests", (req, res) => {
-  ReqSchema.find()
-    .then(requests => res.json(requests))
-    .catch(err => res.status(404).json({ noreqsfound: 'No Requests found' }));
-  });
 module.exports = router;
