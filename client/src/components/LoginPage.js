@@ -9,7 +9,7 @@ function LoginPage(){
 	async function loginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:5000/api/Login', {
+		const response = await fetch('http://localhost:5000/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ function LoginPage(){
 
 		const data = await response.json()
 
-		if (data.user) {
+		if (data.user != null) {
 			localStorage.setItem('token', data.user)
 			alert('Login successful')
 			window.location.href = '/BookRoom'

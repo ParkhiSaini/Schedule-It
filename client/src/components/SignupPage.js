@@ -13,7 +13,7 @@ function SignupPage() {
 	async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:5000/api/SignUp', {
+		const response = await fetch('http://localhost:5000/SignUp', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ function SignupPage() {
     if (data.status=='ValidID'){
       alert("Kindly enter you bennett email id")
     }
-		if (data.status === 'ok123') {
+		if (data.status === 'ok') {
 			navigate('/Login');
 		}
 	}
