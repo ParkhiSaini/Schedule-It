@@ -20,8 +20,8 @@ function App() {
           <Route path='/Login' element={<LoginPage />} />
           <Route path='/Signup' element={<SignupPage />} />
           <Route path='/BookRoom' element={<BookRoom />} />
-         
           <Route path='/Requests' element={<Requests />} />
+          <Route path='/DeanRequests' element={<Requests />} />
           
         </Routes>
       {/* </div> */}
