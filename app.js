@@ -17,7 +17,7 @@ app.use(express.json())
 
 app.use('/api', Roomroutes);
 
-app.use('/api/requests', Reqroutes);
+app.use('/', Reqroutes);
 
 
 app.post('/SignUp', async (req, res) => {

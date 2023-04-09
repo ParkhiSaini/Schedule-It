@@ -1,6 +1,7 @@
 import React  from 'react';
 import { useState } from 'react';
 import '../App.css';
+import { useNavigate } from "react-router-dom";
 
 function LoginPage(){
     const [email, setEmail] = useState('')
@@ -51,7 +52,7 @@ function LoginPage(){
                 <div class="inputBox">
                     <input 
                     value={email}
-					          onChange={(e) => setEmail(e.target.value)}
+					onChange={(e) => setEmail(e.target.value)}
                     type="email" 
                     class="form-control"
                     id="exampleFormControlInput1" 
@@ -60,7 +61,7 @@ function LoginPage(){
                 <div class="inputBox">
                     <input
                     value={password}
-					          onChange={(e) => setPassword(e.target.value)}
+					onChange={(e) => setPassword(e.target.value)}
                     type="password" class="form-control" id="exampleInputPassword1" placeholder="PASSWORD"></input>
                 </div>
                 <input type="submit" value = "Login" class="sign_in2"/>

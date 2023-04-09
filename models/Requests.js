@@ -36,6 +36,10 @@ const ReqSchema = mongoose.Schema({
     stat: {
         type: String,
         required: true
+    },
+    userId: {
+        type: String,
+        required: true
     }
 },{
     collection: 'requests'
