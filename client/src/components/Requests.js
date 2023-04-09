@@ -1,12 +1,23 @@
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 
 function Requests(){
     const [filter, setFilter] = useState('all');
-    const [requests, setRequests] = useState([
+    const [requests, setRequests] = useState([]);
+
+    useEffect(() => {
+      fetch('http://localhost:5000/Requests')
+         .then((res) => res.json())
+         .then((data) => {
+            setRequests(data);
+         })
+         .catch((err) => {
+            console.log(err.message);
+         });
+    }, []);
         {
         id: 1,
         title: 'Request 1',

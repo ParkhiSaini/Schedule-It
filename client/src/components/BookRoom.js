@@ -17,7 +17,6 @@ function BookRoom() {
   const [chapterName, setChapterName] = useState('')
   const [roomType, setRoomType] = useState('')
   const [duration, setDuration] = useState('')
-  const [reason, setReason] = useState('')
   const [userId, setUserId] = useState('')
 
 	async function createRequest(event) {
