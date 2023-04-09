@@ -15,7 +15,7 @@ function App() {
 
         <Routes>
           
-          <Route path='/LandingPage' element={<LandingPage />} />
+          <Route path='/' element={<LandingPage />} />
           <Route path='/Login' element={<LoginPage />} />
           <Route path='/SignUp' element={<SignupPage />} />
           <Route path='/BookRoom' element={<BookRoom />} />
