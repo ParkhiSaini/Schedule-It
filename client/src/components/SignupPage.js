@@ -39,12 +39,12 @@ function SignupPage() {
   return (
     <div class="SignupPage">
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="/LandingPage">
+        <a class="navbar-brand" href="/">
           Home
         </a>
       </nav>
-      <div class="card">
-        <p class="text3">Sign-Up</p>
+      <div class="card2">
+        <p class="signup">Sign-Up</p>
         <p class="schedule_it2">SCHEDULE IT</p>
         <p class="text2_line">An easy to way to book a meeting room</p>
       </div>
@@ -54,7 +54,7 @@ function SignupPage() {
           <input
           value={name}
 					onChange={(e) => setName(e.target.value)}
-          type="name" class="form-control2" placeholder="NAME"></input>
+          type="name" class="form-control2" placeholder="Name"></input>
         </div>
         <div class="inputBox2">
           <input
@@ -63,7 +63,7 @@ function SignupPage() {
           type="email"
           class="form-control2"
           id="exampleFormControlInput1"
-          placeholder="EMAIL"
+          placeholder="Email"
           ></input>
         </div>
         <div class="inputBox2">
@@ -73,7 +73,7 @@ function SignupPage() {
 					  onChange={(e) => setPassword(e.target.value)}
             class="form-control2"
             id="exampleInputPassword1"
-            placeholder="PASSWORD"
+            placeholder="Password"
           ></input>
 
      
@@ -81,7 +81,7 @@ function SignupPage() {
           <div class="inputBox2">
           
             <select class="form-control2_1" id="FormControlSelect1" value={role} onChange={(e) => setRole(e.target.value)}>
-              <option >ROLE</option>
+              <option >Role</option>
               <option id="option" value="Dean/Admin">Dean/Admin</option>
               <option id="option" value="Heads">Heads/Captains</option>
               <option id="option" value="Teachers">Teachers</option>
@@ -90,7 +90,7 @@ function SignupPage() {
             </select>
           </div>
         </div>
-        <input type="submit" class="sign_in2" value = "Create Account"/>
+        <input type="submit" class="submit" value = "Create Account"/>
       </form>
     </div>
   );
