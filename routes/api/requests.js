@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Req = require('../../models/Requests');
-
+const { auth } = require('../../app');
 
 router.get('/test', (req, res) => res.send('Testing heheheheh!'));
 
