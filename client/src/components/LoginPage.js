@@ -9,7 +9,7 @@ function LoginPage(){
 	async function loginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:5000/api/Login', {
+		const response = await fetch('http://localhost:5000/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ function LoginPage(){
 
 		const data = await response.json()
 
-		if (data.user) {
+		if (data.user != null) {
 			localStorage.setItem('token', data.user)
 			alert('Login successful')
 			window.location.href = '/BookRoom'
@@ -51,7 +51,7 @@ function LoginPage(){
                 <div class="inputBox">
                     <input 
                     value={email}
-					onChange={(e) => setEmail(e.target.value)}
+					          onChange={(e) => setEmail(e.target.value)}
                     type="email" 
                     class="form-control"
                     id="exampleFormControlInput1" 
@@ -60,7 +60,7 @@ function LoginPage(){
                 <div class="inputBox">
                     <input
                     value={password}
-					onChange={(e) => setPassword(e.target.value)}
+					          onChange={(e) => setPassword(e.target.value)}
                     type="password" class="form-control" id="exampleInputPassword1" placeholder="PASSWORD"></input>
                 </div>
                 <input type="submit" value = "Login" class="sign_in2"/>

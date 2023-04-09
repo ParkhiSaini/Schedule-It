@@ -13,7 +13,8 @@ const RoomSchema = mongoose.Schema({
         type: Number,
         required: true
     }
-
+},{
+    collection: "rooms"
 })
 
 module.exports = Room = mongoose.model('room', RoomSchema);
