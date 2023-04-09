@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
-
 import { useNavigate } from "react-router-dom";
+
 
 function BookRoom() {
 
@@ -51,7 +51,7 @@ function BookRoom() {
               <select class="form-control3_2" id="FormControlSelect3">
                 <option value="">Room type</option>
                 <option id="option">Group discussion room</option>
-                <option id="option">labs</option>
+                <option id="option">Labs</option>
                 <option id="option">Confrence Room </option>
                 <option id="option">Lecture Room </option>
                 <option id="option">Meeting Rooms</option>
@@ -62,26 +62,27 @@ function BookRoom() {
           <div class="form_col2">
             <div class="inputBox3">
             <input
-              type="name"
+              type="date"
               class="form-control3"
               placeholder="Date:"
+              dateFormat="date/month/year"
             ></input>
             </div>
             <div class="inputBox3">
             <input
               type="name"
               class="form-control3"
-              placeholder="Priority:"
+              placeholder="Priority (1-5):"
             ></input>
             </div>
             <div class="inputBox3">
             <select class="form-control3_3" id="FormControlSelect3">
                 <option value="">Duration</option>
-                <option id="option">1-2hr</option>
-                <option id="option">3-4hrs</option>
-                <option id="option">5-6hrs </option>
-                <option id="option">7-8hrs </option>
-                <option id="option">more than 8 hrs</option>
+                <option id="option">1 Hr</option>
+                <option id="option">3 Hrs</option>
+                <option id="option">5 Hrs </option>
+                <option id="option">7 Hrs </option>
+                <option id="option"> More than 7 Hrs</option>
               </select>
             </div>
           </div>

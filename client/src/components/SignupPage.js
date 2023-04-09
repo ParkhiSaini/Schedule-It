@@ -9,6 +9,7 @@ function SignupPage() {
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+  const[role,setRole]=useState()
 
 	async function registerUser(event) {
 		event.preventDefault()
@@ -22,6 +23,7 @@ function SignupPage() {
 				name,
 				email,
 				password,
+        role,
 			}),
 		})
 
@@ -78,11 +80,12 @@ function SignupPage() {
 
           <div class="inputBox2">
           
-            <select class="form-control2_1" id="FormControlSelect1">
-              <option value="">ROLE</option>
-              <option id="option">Dean/Admin</option>
-              <option id="option">Heads/Captains</option>
-              <option id="option">Student</option>
+            <select class="form-control2_1" id="FormControlSelect1" value={role} onChange={(e) => setRole(e.target.value)}>
+              <option >ROLE</option>
+              <option id="option" value="Dean/Admin">Dean/Admin</option>
+              <option id="option" value="Heads">Heads/Captains</option>
+              <option id="option" value="Teachers">Teachers</option>
+              <option id="option" value="Student">Student</option>
             
             </select>
           </div>

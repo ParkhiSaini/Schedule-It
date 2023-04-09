@@ -647,7 +647,7 @@ h2{
       left:0;
       font-family: 'Mohave';
       padding: 0.625rem 0;
-      font-size: 1rem;
+      font-size: 2rem;
       color: #ffffff;
       pointer-events: none;
       transition: 0.5s;
@@ -659,7 +659,7 @@ h2{
       top: 0;
       left: 0;
       color: #ffffff;
-      font-size: 2rem;
+      font-size: 5rem;
     }
     
 
@@ -668,6 +668,7 @@ h2{
   width:60%;
   top:150px;
   font-family:'Mohave' ;
+  font-size: 1rem;
   border-bottom-color:black ;
   color :white;
   height: 45px;
@@ -675,6 +676,12 @@ h2{
   background: transparent;
   bottom:0;
   position: absolute;
+}
+
+#option{
+  font-size: 1.5rem;
+  font-family:'Times New Roman', Times, serif;
+
 }
     
   .form-control3_1{
@@ -718,7 +725,7 @@ h2{
     color:#000000;
     background-color: transparent;
     
-    width: 60%; }
+    width: 50%; }
   
 .Book{
   position: absolute;

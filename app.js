@@ -22,7 +22,7 @@ app.use('/api/requests', Reqroutes);
 
 app.post('/SignUp', async (req, res) => {
 	console.log("Validation check started");
-	if (!req.body.email.endsWith('@bennett.edu.in')) {
+	if (!req.body.email.toLowerCase().endsWith('@bennett.edu.in')) {
 		res.json({ status: 'ValidID', error: 'Invalid email address' });
 	   console.log("Invalid Email Address kindly use your bennett id");
 	}
@@ -34,6 +34,7 @@ app.post('/SignUp', async (req, res) => {
 				name: req.body.name,
 				email: req.body.email,
 				password: newPassword,
+				role:req.body.role
 			})
 			res.json({ status: 'ok' })
 		} catch (err) {

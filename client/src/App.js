@@ -6,7 +6,7 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import BookRoom from './components/BookRoom';
 import Requests from './components/Requests';
-
+import DeanRequests from './components/DeanRequests';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Route path='/SignUp' element={<SignupPage />} />
           <Route path='/BookRoom' element={<BookRoom />} />
           <Route path='/Requests' element={<Requests />} />
-          <Route path='/DeanRequests' element={<Requests />} />
+          <Route path='/DeanRequests' element={<DeanRequests />} />
           
         </Routes>
       {/* </div> */}
