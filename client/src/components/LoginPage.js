@@ -41,8 +41,8 @@ function LoginPage(){
         </nav>
         <div class="card">
             <p class="text2">Log-In</p>
-            <p class = "schedule_it2">SCHEDULE IT</p>
-            <p class= "text2_line">An easy to way to book a meeting room</p>
+            <p class = "schedule_it_head">SCHEDULE IT</p>
+            <p class= "text2_line_subhead">An easy to way to book a meeting room</p>
             <a class="forgot" href="#" >
             Forgot Password ? 
             </a>
@@ -63,7 +63,7 @@ function LoginPage(){
 					          onChange={(e) => setPassword(e.target.value)}
                     type="password" class="form-control" id="exampleInputPassword1" placeholder="PASSWORD"></input>
                 </div>
-                <input type="submit" value = "Login" class="sign_in2"/>
+                <input type="submit" value = "Login" class="submitbutton"/>
             </form>
         </div>
     );
