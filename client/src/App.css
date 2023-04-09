@@ -151,10 +151,11 @@ body{
 
 @media (max-height:1200px){
   .text1{
-    top:18vh;
+    top:12vh;
   }
   .Scheduleit{
-    bottom:0.3vh;
+    bottom:0vh;
+
   }
 
 }
