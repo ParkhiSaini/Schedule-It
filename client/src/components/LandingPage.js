@@ -34,7 +34,6 @@ function LandingPage(){
        
         
        
-        <button type="button" class="btn" onClick={handleBookNowClick}>Book Now</button>
         
         
 
