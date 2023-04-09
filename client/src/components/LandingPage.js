@@ -31,15 +31,8 @@ function LandingPage(){
         <p class="line4">Want to know the latest<span class="brown"> happenings </span>in the college</p>
         <p class="line5">Want to acess your<span class="brown"> time-table </span>in just a click</p> 
         </div>
-       
-        
-       
-        
-        
-
-
-        </div>
-        );
+      </div>
+    );
       
 }
 export default LandingPage;

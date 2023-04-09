@@ -72,24 +72,6 @@ app.post('/Login', async (req, res) => {
 	}
 })
 
-const auth = (req, res, next) => {
-	const authHeader = req.headers.authorization;
-	if (authHeader) {
-	  const token = authHeader.split(' ')[1];
-	  jwt.verify(token, 'secret123', (err, user) => {
-		if (err) {
-		  return res.sendStatus(403);
-		}
-		req.user = user;
-		next();
-	  });
-	} else {
-	  res.sendStatus(401);
-	}
-  };
-
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
-
-module.exports = {app, auth};
