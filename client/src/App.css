@@ -149,33 +149,14 @@ body{
   text-shadow: 0px 18px 0px rgba(0, 0, 0, 0.25);
   }
 
-
-.btn{
-  position: absolute;
-  width: 214px;
-  height: 70px;
-  left: 520px;
-  bottom:50px;
-  background: #000000;
-  border-radius: 56px;
-  position: absolute;
-  font-family: 'Monomaniac One';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 46px;
-  color: #FFFFFF;
-  cursor: pointer;
-
+@media screen and (max-height:1200){
+  .text1{
+    top:21px;
+    color: pink;
+  }
 
 }
-.button:hover {
-  background-color: #4CAF50; /* Green */
-}
 
-.brown{
-  color:white;
-}
 /*LandingPage ends here */
 
 
