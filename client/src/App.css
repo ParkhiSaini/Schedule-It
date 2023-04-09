@@ -123,7 +123,7 @@ body{
   width: 658px;
   height: 382px;
   left: 360px;
-  top: 14vh;
+  top: 15vh;
   font-family: 'Moulpali';
   font-style: normal;
   font-weight: 400;
@@ -149,7 +149,7 @@ body{
   text-shadow: 0px 18px 0px rgba(0, 0, 0, 0.25);
   }
 
-@media (max-height:1200px){
+@media (min-height:768px) and (max-height:1199px){
   .text1{
     top:12vh;
   }
