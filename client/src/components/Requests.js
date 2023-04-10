@@ -18,26 +18,6 @@ function Requests(){
             console.log(err.message);
          });
     }, []);
-        {
-        id: 1,
-        title: 'Request 1',
-        status: 'approved',
-        date: '2022-03-19',
-        time: '10:00 AM',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        expanded: false,
-        },
-        {
-        id: 2,
-        title: 'Request 2',
-        status: 'pending',
-        date: '2022-03-18',
-        time: '2:30 PM',
-        description: 'Nulla sed lectus ac velit mollis efficitur.',
-        expanded: false,
-        },
-        // Add more request objects here...
-    ]);
 
     function handleFilterClick(e) {
         const newFilter = e.target.dataset.filter;
@@ -97,7 +77,7 @@ function Requests(){
         {filteredRequests.map((request) => (
           <div className="request-item" key={request.id}>
             <div className="request-summary">
-              <div className="request-title">{request.title}</div>
+              <div className="request-name">{request.name}</div>
               <div className="request-date-time">
                 <span className="request-date">{request.date}</span>
                 <span className="request-time">{request.time}</span>
