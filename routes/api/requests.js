@@ -1,22 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const Req = require('../../models/Requests');
-const crypto = require("crypto");
-const auth = require('./auth');
+const auth = require('../../middlewares');
 
 router.get('/test', (req, res) => res.send('Testing heheheheh!'));
 
-router.get("/Requests", (req, res) => {
-    Req.find()
+router.get("/Requests", auth, (req, res, next) => {
+    Req.find({userId: req.user.id})
     .then(requests => res.status(200).json(requests))
     .catch(err => res.status(404).json({ noreqsfound: 'No Requests found' }));
   });
 
 
-router.post('/BookRoom', async(req, res) => {
-  const id = crypto.randomBytes(16).toString("hex");
+router.post('/BookRoom', auth,async(req, res) => {
   const reques = new Req({
-    id: id,
+    userId: req.user.id,
     name: req.body.name,
     numofpeople: req.body.numofpeople,
     date: req.body.date,
@@ -29,14 +27,15 @@ router.post('/BookRoom', async(req, res) => {
     });
   await reques.save()
   .then(requests => {
-  res.status(200).json({status: "okay"});
+  res.status(200).json({token: "okay"});
   })
   .catch(err => {
-  res.status(400).send(err);
+    console.log(err);
+  res.status(400).json(err);
   });
 });
 
-router.get("/DeanRequests", (req, res) => {
+router.get("/DeanRequests",(req, res) => {
   Req.find()
   .then(requests => res.status(200).json(requests))
   .catch(err => res.status(404).json({ noreqsfound: 'No Requests found' }));

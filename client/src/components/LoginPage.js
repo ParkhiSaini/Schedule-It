@@ -23,10 +23,14 @@ function LoginPage(){
 
 		const data = await response.json()
 
-		if (data.user != null) {
-			localStorage.setItem('token', data.user)
+		if (data.token != null) {
+			localStorage.setItem('token', data.token)
 			alert('Login successful')
-			window.location.href = '/BookRoom'
+            if(data.role == 'Dean/Admin'){
+                window.location.href = '/DeanRequests'
+            }else{
+                window.location.href = '/BookRoom'
+            }
 		} else {
 			alert('Please check your username and password')
 		}

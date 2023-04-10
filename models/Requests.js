@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const ReqSchema = mongoose.Schema({
-    id: {
-        type: String,
-        required: true
-    },
     name: {
         type: String,
         required: true
@@ -43,6 +39,7 @@ const ReqSchema = mongoose.Schema({
     },
     userId: {
         type: String,
+        required: true
     }
 },{
     collection: 'requests'

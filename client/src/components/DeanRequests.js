@@ -32,6 +32,11 @@ function DeanRequests(){
       );
   }
 
+  function handleFilterClick(e) {
+    const newFilter = e.target.dataset.filter;
+    setFilter(newFilter);
+}
+
   let filteredRequests = requests;
 
   if (filter !== 'all') {
@@ -68,7 +73,7 @@ function DeanRequests(){
       <button
         className={filter === 'pending' ? 'filter-button active' : 'filter-button'}
         onClick={handleFilterClick}
-        data-filter="pending"
+        data-filter="Pending"
       >
         Pending
       </button>
@@ -80,7 +85,7 @@ function DeanRequests(){
             <div className="request-name">{request.name}</div>
             <div className="request-date-time">
               <span className="request-date">{request.date}</span>
-              <span className="request-time">{request.time}</span>
+              {/* <span className="request-time">{request.time}</span> */}
             </div>
             <button
               className="request-more-button"

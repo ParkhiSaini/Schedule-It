@@ -23,9 +23,11 @@ function BookRoom() {
 	async function createRequest(event) {
 		event.preventDefault()
 
+    const jwtToken = localStorage.getItem('token');
 		const response = await fetch('http://localhost:5000/BookRoom', {
 			method: 'POST',
 			headers: {
+        'Authorization': `Bearer ${jwtToken}`,
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
@@ -41,9 +43,18 @@ function BookRoom() {
 
     const data = await response.json()
 
-    if (data.status === "okay") {
+    if (data.token != null) {
+      console.log(data)
+      alert('Request created successfully')
       window.location.href = '/Requests'
+    } else {
+      alert('Request creation failed')
     }
+  }
+
+  function logout () {
+    localStorage.removeItem('token')
+    window.location.href = '/Login'
   }
 
   return (
@@ -53,7 +64,7 @@ function BookRoom() {
             <a class="navbar-brand" href="/LandingPage">Home</a>
             <a class="Request" href ="/Requests">Requests</a>
             <a class="Time-table" href ="#">Time-Table</a>
-            <a class="User" href ="#">User</a>
+            <a class="User" href="/Login">Logout</a>
           </div>
         </nav>
       <p class="text3">Book Your Room</p>

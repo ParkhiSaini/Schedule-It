@@ -267,8 +267,8 @@ h2{
   color: #fff;
 }
 
-.request-list {
-  max-height: 400px;
+.requests-list {
+  height: 400px;
   overflow-y: scroll;
 }
 

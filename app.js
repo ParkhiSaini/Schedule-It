@@ -4,7 +4,6 @@ const cors = require('cors');
 const User = require('./models/User')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
-const crypto = require("crypto");
 const Requests = require('./models/Requests')
 const connectDB = require('./config/db');
 const Roomroutes = require('./routes/api/rooms');
@@ -22,27 +21,28 @@ app.use('/', Reqroutes);
 
 
 app.post('/SignUp', async (req, res) => {
-	
-	console.log("Validation check started");
-	if (!req.body.email.toLowerCase().endsWith('@bennett.edu.in')) {
+	const user = req.body;
+	const takenEmails = await User.findOne({email: user.email})
+	if (takenEmails) {
+		alert("Email already taken");
+		res.json({ status: 'ValidID', error: 'Email already taken' });
+	}
+	if (!user.email.toLowerCase().endsWith('@bennett.edu.in')) {
 		res.json({ status: 'ValidID', error: 'Invalid email address' });
-	   console.log("Invalid Email Address kindly use your bennett id");
+	   alert("Invalid Email Address kindly use your bennett id");
 	}
 	else{
-		console.log(req.body)
 		try {
-			const userId = crypto.randomBytes(16).toString("hex");
-			const newPassword = await bcrypt.hash(req.body.password, 10)
+			const newPassword = await bcrypt.hash(user.password, 10)
 			await User.create({
-				userId: userId,
-				name: req.body.name,
-				email: req.body.email,
+				name: user.name,
+				email: user.email,
 				password: newPassword,
-				role:req.body.role
+				role: user.role
 			})
 			res.json({ status: 'ok' })
 		} catch (err) {
-			res.json({ status: 'error', error: 'Duplicate email' })
+			res.json({ status: 'error', error: err.message })
 		}
 	}
 })
@@ -50,7 +50,7 @@ app.post('/SignUp', async (req, res) => {
 app.post('/Login', async (req, res) => {
 	const user = await User.findOne({
 		email: req.body.email,
-	}).populate('Requests')
+	})
 
 	if (!user) {
 		return { status: 'error', error: 'Invalid login' }
@@ -62,18 +62,20 @@ app.post('/Login', async (req, res) => {
 	)
 
 	if (isPasswordValid) {
-		const token = jwt.sign(
-			{
-				userId: user.userId,
-				name: user.name,
-				email: user.email,
-			},
-			'secret123'
-		)
-
-		return res.json({ status: 'ok', user: token})
+		const payload = {
+			id: user._id,
+			name: user.name,
+			role: user.role
+		}
+		jwt.sign(payload,'secret123', { expiresIn: 3600 }, (err, token) => {
+			if (err) {
+				return res.json({ status: 'error', error: err.message })
+			}else{
+				return res.json({ status: 'ok', token: token, role: user.role})
+			}
+		})
 	} else {
-		return res.json({ status: 'error', user: false })
+		return res.json({ status: 'error', token: false })
 	}
 })
 

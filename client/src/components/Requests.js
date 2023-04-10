@@ -9,7 +9,14 @@ function Requests(){
     const [requests, setRequests] = useState([]);
 
     useEffect(() => {
-      fetch('http://localhost:5000/Requests')
+      const jwtToken = localStorage.getItem('token');
+      fetch('http://localhost:5000/Requests', {
+          method: 'GET',
+          headers: {
+        'Authorization': `Bearer ${jwtToken}`,
+				'Content-Type': 'application/json',
+      }
+    })
          .then((res) => res.json())
          .then((data) => {
             setRequests(data);
