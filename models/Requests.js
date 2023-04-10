@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ReqSchema = mongoose.Schema({
     id: {
-        type: Number,
+        type: String,
         required: true
     },
     name: {
@@ -37,13 +37,12 @@ const ReqSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    stat: {
+    status: {
         type: String,
         required: true
     },
     userId: {
-        type: String,
-        required: true
+        type: String
     }
 },{
     collection: 'requests'

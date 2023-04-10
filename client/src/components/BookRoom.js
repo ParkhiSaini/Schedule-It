@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 
+
 function BookRoom() {
 
   const navigate = useNavigate(); 
@@ -40,9 +41,8 @@ function BookRoom() {
 
     const data = await response.json()
 
-    if (data.user != null) {
-      alert('Request successfully created')
-      navigate('/Requests');
+    if (data.status === "okay") {
+      window.location.href = '/Requests'
     }
   }
 

@@ -28,7 +28,7 @@ router.post('/BookRoom', async(req, res) => {
     });
   await reques.save()
   .then(requests => {
-  res.status(200).json("request successfully saved");
+  res.status(200).json({status: "okay"});
   })
   .catch(err => {
   res.status(400).send(err);
