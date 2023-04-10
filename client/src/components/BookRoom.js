@@ -75,15 +75,27 @@ function BookRoom() {
               placeholder="Priority (1-5):"
             ></input>
             </div>
-            <div class="inputBox3">
-            <select class="form-control3_3" id="FormControlSelect3">
+            <div class="time">
+              <input 
+              type ="time"
+              class="form-control3_3"
+              placeholder="timimgs"
+              ></input>
+            {/* <select class="form-control3_3" id="FormControlSelect3" >
                 <option value="">Duration</option>
                 <option id="option">1 Hr</option>
                 <option id="option">3 Hrs</option>
                 <option id="option">5 Hrs </option>
                 <option id="option">7 Hrs </option>
                 <option id="option"> More than 7 Hrs</option>
-              </select>
+              </select> */}
+            </div>
+            <div class="reason">
+            <input
+              type="name"
+              class="form-control3_4"
+              placeholder="Reason:"
+            ></input>
             </div>
           </div>
         </div>
