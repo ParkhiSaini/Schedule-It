@@ -56,7 +56,7 @@ function Requests(){
                         onClick={handleFilterClick}
                         data-filter="all"
                         >
-                            All
+                          All
         </button>
         <button
           className={filter === 'approved' ? 'filter-button active' : 'filter-button'}
@@ -91,8 +91,7 @@ function Requests(){
             </div>
             {request.expanded && (
               <div className="request-description">
-                <p>{request.description}</p>
-                {/* Add more description fields here... */}
+                <p>{request.reason}</p>
               </div>
             )}
           </div>

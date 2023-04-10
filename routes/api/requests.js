@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Req = require('../../models/Requests');
 const crypto = require("crypto");
+const auth = require('./auth');
 
 router.get('/test', (req, res) => res.send('Testing heheheheh!'));
 
@@ -33,6 +34,12 @@ router.post('/BookRoom', async(req, res) => {
   .catch(err => {
   res.status(400).send(err);
   });
+});
+
+router.get("/DeanRequests", (req, res) => {
+  Req.find()
+  .then(requests => res.status(200).json(requests))
+  .catch(err => res.status(404).json({ noreqsfound: 'No Requests found' }));
 });
 
 module.exports = router;

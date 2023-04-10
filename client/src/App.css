@@ -294,6 +294,21 @@ h2{
   cursor: pointer;
 }
 
+.request-accept-btn{
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.request-reject-btn{
+  margin-left: 1.7vh;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
 .request-details {
   display: none;
   padding-top: 20px;

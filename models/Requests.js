@@ -42,7 +42,7 @@ const ReqSchema = mongoose.Schema({
         required: true
     },
     userId: {
-        type: String
+        type: String,
     }
 },{
     collection: 'requests'
