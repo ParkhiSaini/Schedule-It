@@ -13,8 +13,8 @@ const ReqSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    priority: {
-        type: Number,
+    time: {
+        type: String,
         required: true
     },
     chapterName: {
@@ -39,6 +39,10 @@ const ReqSchema = mongoose.Schema({
     },
     userId: {
         type: String,
+        required: true
+    },
+    expanded: {
+        type: Boolean,
         required: true
     }
 },{

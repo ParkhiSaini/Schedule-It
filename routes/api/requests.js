@@ -18,12 +18,13 @@ router.post('/BookRoom', auth,async(req, res) => {
     name: req.body.name,
     numofpeople: req.body.numofpeople,
     date: req.body.date,
-    priority: req.body.priority,
+    time: req.body.time,
     chapterName: req.body.chapterName,
     roomType: req.body.roomType,
     duration: req.body.duration,
     status: "Pending",
-    reason: "Loren ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    reason: req.body.reason,
+    expanded: false
     });
   await reques.save()
   .then(requests => {

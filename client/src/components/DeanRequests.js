@@ -53,7 +53,6 @@ function DeanRequests(){
     })
       .then(response => response.json())
       .then(data => {
-        // update the request status in the requests array
         setRequests(
           requests.map(request => {
             if (request._id === id) {
@@ -83,7 +82,6 @@ function DeanRequests(){
     })
       .then(response => response.json())
       .then(data => {
-        // update the request status in the requests array
         setRequests(
           requests.map(request => {
             if (request._id === id) {
@@ -138,7 +136,7 @@ function DeanRequests(){
         Approved
       </button>
       <button
-        className={filter === 'rejected' ? 'filter-button active' : 'filter-button'}
+        className={filter === 'pending' ? 'filter-button active' : 'filter-button'}
         onClick={handleFilterClick}
         data-filter="Pending"
       >
@@ -152,7 +150,7 @@ function DeanRequests(){
             <div className="request-name">{request.name}</div>
             <div className="request-date-time">
               <span className="request-date">{request.date}</span>
-              {/* <span className="request-time">{request.time}</span> */}
+              <span className="request-time">{request.time}</span>
             </div>
             <button
               className="request-more-button"
@@ -164,6 +162,10 @@ function DeanRequests(){
           {request.expanded && (
             <div className="request-description">
               <p>{request.reason}</p>
+              <p>Number of people: {request.numofpeople}</p>
+              <p>Chapter Name: {request.chapterName}</p>
+              <p>Room Type: {request.roomType}</p>
+              <p>Duration: {request.duration}</p>
               <button className="request-accept-btn" onClick={() => handleAccept(request._id)}>Accept</button> 
               <button className="request-reject-btn" onClick={() => handleReject(request._id)}>Reject</button>
             </div>

@@ -748,5 +748,30 @@ h2{
   cursor: pointer;
  }
 
+ .form-control3_4{
+  margin-top:29% ;
  
+width: 390px;
+padding: 0.625rem ;
+font-size: 2rem;
+color:white;
+letter-spacing: 0.062rem;
+border: none;
+border-bottom: 0.06rem solid #000000;
+outline: none;
+background: transparent;
+
+}
+.form-control3_4{
+  margin-top:35% ;
+  width: 390px;
+  padding: 0.625rem ;
+  font-size: 2rem;
+  color:white;
+  letter-spacing: 0.062rem;
+  border: none;
+  border-bottom: 0.06rem solid #000000;
+  outline: none;
+  background: transparent;
+}
 

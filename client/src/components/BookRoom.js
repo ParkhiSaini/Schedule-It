@@ -14,11 +14,11 @@ function BookRoom() {
 	const [name, setName] = useState('')
 	const [numofpeople, setNumOfPeople] = useState('')
 	const [date, setDate] = useState('')
-  const [priority, setPriority] = useState('')
+  const [time, setTime] = useState('')
   const [chapterName, setChapterName] = useState('')
   const [roomType, setRoomType] = useState('')
   const [duration, setDuration] = useState('')
-  const [userId, setUserId] = useState('')
+  const [reason, setReason] = useState('')
 
 	async function createRequest(event) {
 		event.preventDefault()
@@ -34,10 +34,11 @@ function BookRoom() {
 				name,
         numofpeople,
         date,
-        priority,
+        time,
         chapterName,
         roomType,
-        duration
+        duration,
+        reason
 			}),
 		})
 
@@ -118,10 +119,11 @@ function BookRoom() {
             </div>
             <div class="inputBox3">
             <input
+            type = "time"
               class="form-control3"
-              placeholder="Priority (1-5):"
-              value={priority}
-              onChange={(e) => setPriority(e.target.value)}
+              placeholder="time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
             ></input>
             </div>
             <div class="inputBox3">
@@ -133,6 +135,15 @@ function BookRoom() {
                 <option id="option">7 Hrs </option>
                 <option id="option"> More than 7 Hrs</option>
               </select>
+            </div>
+            <div class="reason">
+            <input
+              type = "text"
+              class="form-control3_4"
+              placeholder="Reason:"
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+            ></input>
             </div>
           </div>
         </div>

@@ -34,7 +34,7 @@ function Requests(){
     function handleMoreClick(id) {
         setRequests(
         requests.map((request) =>
-            request.id === id ? { ...request, expanded: !request.expanded } : request
+            request._id === id ? { ...request, expanded: !request.expanded } : request
         )
         );
     }
@@ -82,7 +82,7 @@ function Requests(){
       </div>
       <div className="requests-list">
         {filteredRequests.map((request) => (
-          <div className="request-item" key={request.id}>
+          <div className="request-item" key={request._id}>
             <div className="request-summary">
               <div className="request-name">{request.name}</div>
               <div className="request-date-time">
@@ -91,7 +91,7 @@ function Requests(){
               </div>
               <button
                 className="request-more-button"
-                onClick={() => handleMoreClick(request.id)}
+                onClick={() => handleMoreClick(request._id)}
               >
                 More
               </button>
@@ -99,6 +99,10 @@ function Requests(){
             {request.expanded && (
               <div className="request-description">
                 <p>{request.reason}</p>
+                <p>Number of people: {request.numofpeople}</p>
+                <p>Chapter Name: {request.chapterName}</p>
+                <p>Room Type: {request.roomType}</p>
+                <p>Duration: {request.duration}</p>
               </div>
             )}
           </div>
