@@ -41,4 +41,29 @@ router.get("/DeanRequests",(req, res) => {
   .catch(err => res.status(404).json({ noreqsfound: 'No Requests found' }));
 });
 
+router.post("/Requests/:id/accept", auth, async (req, res) => {
+  const requestId = req.params.id;
+  Req.findByIdAndUpdate(requestId, { status: "Approved" }, { new: true })
+  .then((updatedRequest) => {
+    console.log(updatedRequest);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+});
+
+router.post("/Requests/:id/reject", auth, async (req, res) => {
+  const requestId = req.params.id;
+  Req.findByIdAndUpdate(requestId, { status: "Rejected" }, { new: true })
+  .then((updatedRequest) => {
+    console.log(updatedRequest);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+});
+
+
+
+
 module.exports = router;

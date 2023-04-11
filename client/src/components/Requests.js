@@ -68,14 +68,14 @@ function Requests(){
         <button
           className={filter === 'approved' ? 'filter-button active' : 'filter-button'}
           onClick={handleFilterClick}
-          data-filter="approved"
+          data-filter="Approved"
         >
           Approved
         </button>
         <button
           className={filter === 'pending' ? 'filter-button active' : 'filter-button'}
           onClick={handleFilterClick}
-          data-filter="pending"
+          data-filter="Pending"
         >
           Pending
         </button>

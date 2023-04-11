@@ -7,9 +7,16 @@ import '../App.css';
 function DeanRequests(){
   const [filter, setFilter] = useState('all');
   const [requests, setRequests] = useState([]);
+  const jwtToken = localStorage.getItem('token');
 
   useEffect(() => {
-    fetch('http://localhost:5000/DeanRequests')
+    fetch('http://localhost:5000/DeanRequests',{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${jwtToken}`,
+    }
+  })
        .then((res) => res.json())
        .then((data) => {
           setRequests(data);
@@ -30,6 +37,66 @@ function DeanRequests(){
           request.id === id ? { ...request, expanded: !request.expanded } : request
       )
       );
+  }
+
+  function handleAccept(id) {
+    
+    fetch(`http://localhost:5000/Requests/${id}/accept`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${jwtToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        status: 'Approved'
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        // update the request status in the requests array
+        setRequests(
+          requests.map(request => {
+            if (request._id === id) {
+              return { ...request, status: 'Approved' };
+            } else {
+              return request;
+            }
+          })
+        );
+      })
+      .catch(error => {
+        console.error({'Error': error});
+      });
+  }
+
+  function handleReject(id) {
+    
+    fetch(`http://localhost:5000/Requests/${id}/reject`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${jwtToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        status: 'Rejected'
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        // update the request status in the requests array
+        setRequests(
+          requests.map(request => {
+            if (request._id === id) {
+              return { ...request, status: 'Rejected' };
+            } else {
+              return request;
+            }
+          })
+        );
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   }
 
   function handleFilterClick(e) {
@@ -66,12 +133,12 @@ function DeanRequests(){
       <button
         className={filter === 'approved' ? 'filter-button active' : 'filter-button'}
         onClick={handleFilterClick}
-        data-filter="approved"
+        data-filter="Approved"
       >
         Approved
       </button>
       <button
-        className={filter === 'pending' ? 'filter-button active' : 'filter-button'}
+        className={filter === 'rejected' ? 'filter-button active' : 'filter-button'}
         onClick={handleFilterClick}
         data-filter="Pending"
       >
@@ -80,7 +147,7 @@ function DeanRequests(){
     </div>
     <div className="requests-list">
       {filteredRequests.map((request) => (
-        <div className="request-item" key={request.id}>
+        <div className="request-item" key={request.userId}>
           <div className="request-summary">
             <div className="request-name">{request.name}</div>
             <div className="request-date-time">
@@ -97,8 +164,8 @@ function DeanRequests(){
           {request.expanded && (
             <div className="request-description">
               <p>{request.reason}</p>
-              <button className="request-accept-btn">Accept</button> 
-              <button className="request-reject-btn">Reject</button>
+              <button className="request-accept-btn" onClick={() => handleAccept(request._id)}>Accept</button> 
+              <button className="request-reject-btn" onClick={() => handleReject(request._id)}>Reject</button>
             </div>
           )}
         </div>
