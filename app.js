@@ -22,14 +22,8 @@ app.use('/', Reqroutes);
 
 app.post('/SignUp', async (req, res) => {
 	const user = req.body;
-	const takenEmails = await User.findOne({email: user.email})
-	if (takenEmails) {
-		alert("Email already taken");
-		res.json({ status: 'ValidID', error: 'Email already taken' });
-	}
 	if (!user.email.toLowerCase().endsWith('@bennett.edu.in')) {
 		res.json({ status: 'ValidID', error: 'Invalid email address' });
-	   alert("Invalid Email Address kindly use your bennett id");
 	}
 	else{
 		try {
@@ -75,7 +69,7 @@ app.post('/Login', async (req, res) => {
 			}
 		})
 	} else {
-		return res.json({ status: 'error', token: false })
+		return res.json({ status: 'error'})
 	}
 })
 
