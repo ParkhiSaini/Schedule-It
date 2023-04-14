@@ -28,7 +28,7 @@ function SignupPage() {
 		})
 
 		const data = await response.json()
-    if (data.status=='ValidID'){
+    if (data.status=='invalidID'){
       alert("Kindly enter you bennett email id")
     }
 		if (data.status === 'ok') {
