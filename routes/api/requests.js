@@ -12,7 +12,7 @@ router.get("/Requests", auth, (req, res, next) => {
   });
 
 
-router.post('/BookRoom', auth,async(req, res) => {
+router.post('/BookRoom', auth, async(req, res) => {
   const reques = new Req({
     userId: req.user.id,
     name: req.body.name,
@@ -32,7 +32,7 @@ router.post('/BookRoom', auth,async(req, res) => {
   })
   .catch(err => {
     console.log(err);
-  res.status(400).json(err);
+    res.status(400).json(err);
   });
 });
 
