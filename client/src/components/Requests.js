@@ -48,7 +48,7 @@ function Requests(){
         <div class="Requests">
                <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
-                      <a class="navbar-brand" href="#">Home</a>
+                      <a class="navbar-brand" href="/">Home</a>
                       <a class="Request" href ="#">Requests</a>
                       <a class="Time-table" href ="#">Time-Table</a>
                       <a class="User" href ="#">User</a>
@@ -66,14 +66,14 @@ function Requests(){
                           All
         </button>
         <button
-          className={filter === 'approved' ? 'filter-button active' : 'filter-button'}
+          className={filter === 'Approved' ? 'filter-button active' : 'filter-button'}
           onClick={handleFilterClick}
           data-filter="Approved"
         >
           Approved
         </button>
         <button
-          className={filter === 'pending' ? 'filter-button active' : 'filter-button'}
+          className={filter === 'Pending' ? 'filter-button active' : 'filter-button'}
           onClick={handleFilterClick}
           data-filter="Pending"
         >

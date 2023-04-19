@@ -40,7 +40,7 @@ function LoginPage(){
     return(
         <div class ="LoginPage">
             <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#" >
+            <a class="navbar-brand" href="/" >
                 Home 
             </a>
         </nav>

@@ -24,7 +24,6 @@ app.post('/SignUp', async (req, res) => {
 	const user = req.body;
 	if (!user.email.toLowerCase().endsWith('@bennett.edu.in')) {
 		res.json({ status: 'ValidID', error: 'Invalid email address' });
-	   alert("Invalid Email Address kindly use your bennett id");
 	}
 	else{
 		try {
@@ -70,7 +69,7 @@ app.post('/Login', async (req, res) => {
 			}
 		})
 	} else {
-		return res.json({ status: 'error', token: false })
+		return res.json({ status: 'error'})
 	}
 })
 
