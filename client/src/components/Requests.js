@@ -50,8 +50,8 @@ function Requests(){
                     <div class="container-fluid">
                       <a class="navbar-brand" href="/">Home</a>
                       <a class="Request" href ="#">Requests</a>
-                      <a class="Time-table" href ="#">Time-Table</a>
-                      <a class="User" href ="#">User</a>
+                      <a class="Time-table" href ="/TimeTable">Time-Table</a>
+                      <a class="User" href ="\Login">Logout</a>
                       </div>
                 </nav>
 

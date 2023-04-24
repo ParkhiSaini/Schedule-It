@@ -7,6 +7,7 @@ import SignupPage from './components/SignupPage';
 import BookRoom from './components/BookRoom';
 import Requests from './components/Requests';
 import DeanRequests from './components/DeanRequests';
+import TimeTable from './components/TimeTable';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path='/BookRoom' element={<BookRoom />} />
           <Route path='/Requests' element={<Requests />} />
           <Route path='/DeanRequests' element={<DeanRequests />} />
-          
+          <Route path='/TimeTable' element={<TimeTable />} />
         </Routes>
       {/* </div> */}
     </Router>
